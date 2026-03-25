@@ -42,7 +42,7 @@ public class Employee {
         this.department = department;
         this.salary = salary;
     }
-    
+
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
