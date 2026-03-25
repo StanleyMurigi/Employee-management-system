@@ -1,5 +1,6 @@
 package com.company.service.implement;
 
+import com.company.exception.ResourceNotFoundException;
 import com.company.model.Employee;
 import com.company.repository.EmployeeRepository;
 import com.company.service.IEmployeeService;
@@ -23,7 +24,7 @@ public class EmployeeServiceImpl implements IEmployeeService {
     @Override
     public Employee getEmployeeById(Long id) {
         return repository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Employee not found with id: " + id));
+                .orElseThrow(() -> new ResourceNotFoundException("Employee not found with id: " + id));
     }
 
     @Override
